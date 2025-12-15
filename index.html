@@ -22,19 +22,12 @@
         /* Smooth Scroll Behavior */
         html { scroll-behavior: smooth; }
         
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
+        /* Parallax Background Helper */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
     <script>
@@ -43,10 +36,9 @@
                 extend: {
                     colors: {
                         agape: {
-                            navy: '#0f172a',   /* Deep Navy */
-                            gold: '#d4af37',   /* Elegant Gold */
-                            light: '#f8fafc',  /* Off-white */
-                            accent: '#334155'  /* Slate Gray */
+                            navy: '#0f172a',
+                            gold: '#d4af37',
+                            light: '#f8fafc',
                         }
                     }
                 }
@@ -56,152 +48,164 @@
 </head>
 <body class="font-body text-slate-700 bg-slate-50 overflow-x-hidden">
 
-    <nav class="bg-white/95 backdrop-blur-sm shadow-md fixed w-full z-50 transition-all duration-300" data-aos="fade-down" data-aos-duration="800">
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full z-50 transition-all duration-300" data-aos="fade-down" data-aos-duration="1000">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center">
                 
-                <div class="flex-shrink-0 flex items-center gap-4">
-                    <img src="logo.png" alt="Agape MedNotes Logo" class="h-16 w-16 rounded-full object-cover shadow-sm hover:shadow-md transition duration-300">
+                <div class="flex-shrink-0 flex items-center gap-4 group cursor-pointer">
+                    <img src="logo.png" alt="Agape MedNotes Logo" class="h-16 w-16 rounded-full object-cover shadow-md group-hover:rotate-12 transition duration-500">
                     <span class="font-heading text-2xl text-agape-navy tracking-tight hidden sm:block">
                         Agape MedNotes
                     </span>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-slate-600 hover:text-agape-navy font-semibold transition hover:-translate-y-0.5 transform">Why Us</a>
-                    <a href="#library" class="text-slate-600 hover:text-agape-navy font-semibold transition hover:-translate-y-0.5 transform">Library</a>
-                    <a href="#about" class="text-slate-600 hover:text-agape-navy font-semibold transition hover:-translate-y-0.5 transform">About</a>
-                    <a href="#" class="bg-agape-navy text-white px-6 py-2 rounded-full hover:bg-slate-800 transition shadow-lg border border-transparent hover:border-agape-gold hover:scale-105 transform duration-200">Get Access</a>
+                    <a href="#features" class="text-slate-600 hover:text-agape-navy font-semibold transition hover:scale-110 transform duration-200">Why Us</a>
+                    <a href="#library" class="text-slate-600 hover:text-agape-navy font-semibold transition hover:scale-110 transform duration-200">Library</a>
+                    <a href="#about" class="text-slate-600 hover:text-agape-navy font-semibold transition hover:scale-110 transform duration-200">About</a>
+                    <a href="#" class="bg-agape-navy text-white px-6 py-2 rounded-full hover:bg-agape-gold hover:text-agape-navy transition shadow-lg hover:shadow-agape-gold/50 transform hover:-translate-y-1 duration-300">Get Access</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button class="text-agape-navy hover:text-agape-gold focus:outline-none transition">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                    <button class="text-agape-navy hover:text-agape-gold focus:outline-none transition transform hover:rotate-180 duration-500">
+                        <i class="fa-solid fa-bars text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="relative pt-36 pb-20 lg:pt-52 lg:pb-32 overflow-hidden bg-slate-50">
+    <div class="relative pt-40 pb-32 lg:pt-60 lg:pb-48 overflow-hidden parallax-bg" 
+         style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        
+        <div class="absolute top-0 left-0 w-full h-full bg-agape-navy/85 z-0"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            <span class="text-agape-gold font-bold tracking-widest uppercase text-sm mb-4 block" data-aos="fade-up" data-aos-delay="100">
-                Comprehensive Medical Education
+            <span class="text-agape-gold font-bold tracking-[0.3em] uppercase text-sm mb-6 block border-b border-agape-gold w-fit mx-auto pb-2" data-aos="zoom-in" data-aos-delay="100">
+                Szeged Medical Community
             </span>
             
-            <h1 class="text-5xl md:text-7xl font-heading text-agape-navy mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
-                Study with Heart,<br>
-                <span class="italic text-agape-gold">Practice with Care.</span>
+            <h1 class="text-5xl md:text-8xl font-heading text-white mb-8 leading-tight drop-shadow-2xl" data-aos="fade-up" data-aos-duration="1200">
+                Study with <span class="text-agape-gold">Heart</span>,<br>
+                Practice with <span class="italic font-light">Care.</span>
             </h1>
             
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 mb-10 font-light" data-aos="fade-up" data-aos-delay="300">
-                High-yield medical notes, beautifully organized visual guides, and study resources designed for medical students in Szeged and beyond.
+            <p class="mt-4 max-w-2xl mx-auto text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                High-yield medical notes and beautifully organized visual guides designed for medical students in Szeged.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
-                <a href="#library" class="bg-agape-navy text-white px-8 py-4 rounded-lg font-semibold shadow-xl hover:bg-slate-800 hover:-translate-y-1 transition transform duration-200">
+            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="flip-up" data-aos-delay="600">
+                <a href="#library" class="bg-agape-gold text-agape-navy px-10 py-4 rounded-lg font-bold shadow-xl hover:bg-white transition transform hover:-translate-y-1 hover:shadow-2xl duration-300">
                     Browse Notes
                 </a>
-                <a href="#demo" class="bg-white text-agape-navy border-2 border-agape-navy px-8 py-4 rounded-lg font-semibold hover:bg-slate-50 transition hover:-translate-y-1 transform duration-200">
-                    View Sample
+                <a href="#about" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-bold hover:bg-white hover:text-agape-navy transition transform hover:-translate-y-1 duration-300">
+                    Contact Us
                 </a>
             </div>
-        </div>
-        
-        <div class="absolute top-0 left-0 w-full h-full z-0 opacity-10 pointer-events-none">
-            <svg class="absolute top-20 left-20 text-agape-navy w-64 h-64 animate-pulse" fill="currentColor" viewBox="0 0 200 200"><path d="M45,-76C58.3,-69.3,69.4,-59.1,78.2,-47.4C87,-35.7,93.5,-22.5,91.8,-10.2C90.1,2.1,80.3,13.5,70.8,24.3C61.3,35.1,52.1,45.3,41.4,54.8C30.7,64.3,18.5,73.1,5.2,74.8C-8.1,76.5,-22.5,71.1,-35.3,63.1C-48.1,55.1,-59.3,44.5,-68.6,32.3C-77.9,20.1,-85.3,6.3,-83.4,-6.4C-81.5,-19.1,-70.3,-30.7,-59.2,-40.4C-48.1,-50.1,-37.1,-57.9,-25.6,-65.8C-14.1,-73.7,-2.1,-81.7,12.5,-83.7L27.1,-85.7Z" transform="translate(100 100)" /></svg>
         </div>
     </div>
 
-    <section id="features" class="py-24 bg-white">
+    <section id="features" class="py-28 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-heading text-4xl text-agape-navy">Why Choose Agape MedNotes?</h2>
-                <div class="h-1 w-20 bg-agape-gold mx-auto mt-4 rounded-full"></div>
+            <div class="text-center mb-20" data-aos="fade-down">
+                <h2 class="font-heading text-4xl md:text-5xl text-agape-navy mb-4">Why Choose Agape MedNotes?</h2>
+                <div class="h-1.5 w-24 bg-agape-gold mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 bg-white group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-agape-navy mb-6 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-brain text-3xl text-agape-gold"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="p-8 bg-slate-50 rounded-3xl hover:shadow-2xl transition duration-500 group border border-slate-100" data-aos="fade-right" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-agape-navy mb-8 shadow-md group-hover:bg-agape-navy group-hover:text-agape-gold transition duration-500 transform group-hover:rotate-6">
+                        <i class="fa-solid fa-brain text-4xl"></i>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3 text-agape-navy">High-Yield Content</h3>
-                    <p class="text-slate-600 leading-relaxed font-light">Concise summaries focused on what actually matters for your exams and clinical practice, cutting through the fluff.</p>
+                    <h3 class="font-heading text-3xl mb-4 text-agape-navy">High-Yield Content</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">Concise summaries focused on exactly what matters for your exams in Szeged.</p>
                 </div>
 
-                <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 bg-white group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-agape-navy mb-6 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-pen-nib text-3xl text-agape-gold"></i>
+                <div class="p-8 bg-slate-50 rounded-3xl hover:shadow-2xl transition duration-500 group border border-slate-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-agape-navy mb-8 shadow-md group-hover:bg-agape-navy group-hover:text-agape-gold transition duration-500 transform group-hover:rotate-6">
+                        <i class="fa-solid fa-pen-nib text-4xl"></i>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3 text-agape-navy">Visual Learning</h3>
-                    <p class="text-slate-600 leading-relaxed font-light">Beautifully hand-drawn diagrams and clear charts to help you visualize complex anatomical and physiological concepts.</p>
+                    <h3 class="font-heading text-3xl mb-4 text-agape-navy">Visual Learning</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">Beautifully hand-drawn diagrams to help you visualize complex anatomy.</p>
                 </div>
 
-                <div class="p-8 border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 bg-white group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-agape-navy mb-6 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-heart-pulse text-3xl text-agape-gold"></i>
+                <div class="p-8 bg-slate-50 rounded-3xl hover:shadow-2xl transition duration-500 group border border-slate-100" data-aos="fade-left" data-aos-delay="500">
+                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-agape-navy mb-8 shadow-md group-hover:bg-agape-navy group-hover:text-agape-gold transition duration-500 transform group-hover:rotate-6">
+                        <i class="fa-solid fa-heart-pulse text-4xl"></i>
                     </div>
-                    <h3 class="font-heading text-2xl mb-3 text-agape-navy">Clinical Focus</h3>
-                    <p class="text-slate-600 leading-relaxed font-light">Notes that don't just teach you the facts, but show you how to apply them with compassion in a real-world setting.</p>
+                    <h3 class="font-heading text-3xl mb-4 text-agape-navy">Clinical Focus</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">Notes that teach you how to apply facts with compassion in real-world settings.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="library" class="py-24 bg-slate-50 border-t border-slate-200">
+    <section id="library" class="py-28 bg-slate-100 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4" data-aos="fade-right">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4" data-aos="fade-right">
                 <div>
-                    <h2 class="font-heading text-4xl text-agape-navy">Popular Collections</h2>
-                    <p class="mt-2 text-slate-500 text-lg font-light">Explore our most downloaded study bundles.</p>
+                    <h2 class="font-heading text-4xl md:text-5xl text-agape-navy">Popular Collections</h2>
+                    <p class="mt-4 text-slate-500 text-xl font-light">Explore our most downloaded study bundles.</p>
                 </div>
-                <a href="#" class="text-agape-navy font-bold hover:text-agape-gold transition flex items-center gap-2 group">
-                    View All Categories <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                <a href="#" class="text-agape-navy font-bold hover:text-agape-gold transition flex items-center gap-2 group text-lg">
+                    View All Categories <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition duration-300"></i>
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-2 duration-300" data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-48 bg-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition relative overflow-hidden">
-                        <i class="fa-solid fa-heart text-5xl text-slate-300 group-hover:text-agape-navy transition duration-500 group-hover:scale-110"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-agape-navy/20 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cardiology" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 relative z-20 bg-white">
                         <div class="text-xs font-bold text-agape-gold uppercase mb-2 tracking-wider">Cardiology</div>
-                        <h3 class="font-heading text-xl text-agape-navy group-hover:text-agape-gold transition">Cardiovascular</h3>
+                        <h3 class="font-heading text-2xl text-agape-navy group-hover:text-agape-gold transition">Cardiovascular</h3>
                         <p class="text-sm text-slate-500 mt-2">ECGs, Pathologies, and Pharmacology.</p>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-2 duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition overflow-hidden">
-                        <i class="fa-solid fa-lungs text-5xl text-slate-300 group-hover:text-agape-navy transition duration-500 group-hover:scale-110"></i>
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-agape-navy/20 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Pulmonology" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 bg-white">
                         <div class="text-xs font-bold text-agape-gold uppercase mb-2 tracking-wider">Pulmonology</div>
-                        <h3 class="font-heading text-xl text-agape-navy group-hover:text-agape-gold transition">Respiratory</h3>
+                        <h3 class="font-heading text-2xl text-agape-navy group-hover:text-agape-gold transition">Respiratory</h3>
                         <p class="text-sm text-slate-500 mt-2">Gas exchange, mechanics, and diseases.</p>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-2 duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition overflow-hidden">
-                        <i class="fa-solid fa-capsules text-5xl text-slate-300 group-hover:text-agape-navy transition duration-500 group-hover:scale-110"></i>
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-agape-navy/20 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Pharmacology" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 bg-white">
                         <div class="text-xs font-bold text-agape-gold uppercase mb-2 tracking-wider">Pharmacology</div>
-                        <h3 class="font-heading text-xl text-agape-navy group-hover:text-agape-gold transition">Drug Classes</h3>
+                        <h3 class="font-heading text-2xl text-agape-navy group-hover:text-agape-gold transition">Drug Classes</h3>
                         <p class="text-sm text-slate-500 mt-2">Mechanisms of action and side effects.</p>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-2 duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition overflow-hidden">
-                        <i class="fa-solid fa-dna text-5xl text-slate-300 group-hover:text-agape-navy transition duration-500 group-hover:scale-110"></i>
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-agape-navy/20 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Genetics" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 bg-white">
                         <div class="text-xs font-bold text-agape-gold uppercase mb-2 tracking-wider">Genetics</div>
-                        <h3 class="font-heading text-xl text-agape-navy group-hover:text-agape-gold transition">Medical Genetics</h3>
+                        <h3 class="font-heading text-2xl text-agape-navy group-hover:text-agape-gold transition">Medical Genetics</h3>
                         <p class="text-sm text-slate-500 mt-2">Inheritance patterns and disorders.</p>
                     </div>
                 </div>
@@ -209,80 +213,72 @@
         </div>
     </section>
 
-    <section class="bg-agape-navy py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-agape-gold opacity-10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-        
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="zoom-in">
-            <h2 class="font-heading text-3xl md:text-5xl text-white mb-6">Get the "Weekly Rounds"</h2>
-            <p class="text-slate-300 mb-10 text-lg font-light">Join students in Szeged receiving free study guides, mnemonics, and medical news every Monday.</p>
-            <form class="flex flex-col sm:flex-row gap-4 justify-center">
-                <input type="email" placeholder="Enter your email address" class="px-6 py-4 rounded-lg w-full sm:w-96 focus:outline-none focus:ring-4 focus:ring-agape-gold/50 text-slate-800 transition duration-300">
-                <button type="button" class="bg-agape-gold text-agape-navy font-bold px-10 py-4 rounded-lg hover:bg-yellow-500 transition shadow-lg whitespace-nowrap hover:scale-105 transform duration-200">
-                    Subscribe
-                </button>
-            </form>
-        </div>
-    </section>
+    <footer class="bg-slate-900 text-slate-400 py-20 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-agape-gold opacity-5 rounded-full blur-3xl"></div>
 
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                
                 <div class="col-span-1 md:col-span-1" data-aos="fade-up">
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="logo.png" alt="Logo" class="h-10 w-10 rounded-full border border-slate-600">
-                        <h3 class="text-white font-heading text-xl">Agape MedNotes</h3>
+                        <img src="logo.png" alt="Logo" class="h-12 w-12 rounded-full border-2 border-slate-600">
+                        <h3 class="text-white font-heading text-2xl">Agape MedNotes</h3>
                     </div>
-                    <p class="text-sm leading-relaxed mb-6 font-light">Empowering the next generation of healers with clarity, precision, and compassion.</p>
+                    <p class="text-sm leading-relaxed mb-6 font-light text-slate-400">
+                        Empowering the next generation of healers in Szeged with clarity, precision, and compassion.
+                    </p>
                     
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/agapemedszeged" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-agape-gold hover:text-agape-navy transition transform hover:scale-110 duration-200">
-                            <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/agapemednotes" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gradient-to-tr hover:from-purple-600 hover:to-pink-600 hover:text-white transition transform hover:scale-110 duration-200 shadow-lg">
+                            <i class="fa-brands fa-instagram text-xl"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-agape-gold hover:text-agape-navy transition transform hover:scale-110 duration-200">
-                            <i class="fa-brands fa-tiktok"></i>
+                        <a href="mailto:agapemednotes@gmail.com" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-white hover:text-red-500 transition transform hover:scale-110 duration-200 shadow-lg">
+                            <i class="fa-solid fa-envelope text-xl"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-white font-bold mb-6 text-lg">Resources</h4>
+                    <h4 class="text-white font-bold mb-6 text-lg tracking-wider">Resources</h4>
                     <ul class="space-y-4 text-sm font-light">
-                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-1 duration-200"><i class="fa-solid fa-angle-right text-xs"></i> Study Guides</a></li>
-                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-1 duration-200"><i class="fa-solid fa-angle-right text-xs"></i> Flashcards</a></li>
-                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-1 duration-200"><i class="fa-solid fa-angle-right text-xs"></i> Video Lectures</a></li>
+                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-2 duration-300"><i class="fa-solid fa-angle-right text-xs text-agape-gold"></i> Study Guides</a></li>
+                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-2 duration-300"><i class="fa-solid fa-angle-right text-xs text-agape-gold"></i> Flashcards</a></li>
+                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-2 duration-300"><i class="fa-solid fa-angle-right text-xs text-agape-gold"></i> Video Lectures</a></li>
                     </ul>
                 </div>
                 
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-white font-bold mb-6 text-lg">Company</h4>
-                    <ul class="space-y-4 text-sm font-light">
-                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-1 duration-200"><i class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
-                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-1 duration-200"><i class="fa-solid fa-angle-right text-xs"></i> Contact</a></li>
-                        <li><a href="#" class="hover:text-agape-gold transition flex items-center gap-2 hover:translate-x-1 duration-200"><i class="fa-solid fa-angle-right text-xs"></i> Privacy Policy</a></li>
-                    </ul>
-                </div>
-
-                <div id="about" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="text-white font-bold mb-6 text-lg">Contact</h4>
-                    <ul class="space-y-4 text-sm font-light">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-envelope mt-1 text-agape-gold"></i>
-                            <span>support@agapemednotes.com</span>
+                <div class="col-span-1 md:col-span-2" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-white font-bold mb-6 text-lg tracking-wider">Contact Us</h4>
+                    <ul class="space-y-6 text-sm font-light">
+                        
+                        <li class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-agape-gold group-hover:text-agape-navy transition duration-300">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="mt-1">
+                                <span class="block text-slate-300 text-xs uppercase tracking-widest mb-1">Email</span>
+                                <a href="mailto:agapemednotes@gmail.com" class="text-lg text-white hover:text-agape-gold transition">agapemednotes@gmail.com</a>
+                            </div>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-agape-gold"></i>
-                            <span>Szeged, Hungary</span>
+
+                        <li class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-agape-gold group-hover:text-agape-navy transition duration-300">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="mt-1">
+                                <span class="block text-slate-300 text-xs uppercase tracking-widest mb-1">Location</span>
+                                <span class="text-lg text-white">Szeged, Hungary</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light">
+            <div class="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light text-slate-500">
                 <p>&copy; 2024 Agape MedNotes. All rights reserved.</p>
-                <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition">Terms</a>
-                    <a href="#" class="hover:text-white transition">Privacy</a>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
                 </div>
             </div>
         </div>
@@ -291,10 +287,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true,  // Animation happens only once - while scrolling down
-            offset: 100, // Offset (in px) from the original trigger point
-            duration: 800, // Duration of animation
-            easing: 'ease-out-cubic', // Easing function
+            once: true,  
+            offset: 120, 
+            duration: 1000, 
+            easing: 'ease-out-cubic',
         });
     </script>
 </body>
